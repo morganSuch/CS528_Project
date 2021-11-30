@@ -12,8 +12,14 @@ HE.contextGen(p=65537)
 HE.keyGen()             
 print(HE)
 
-directory = 'test-images/Pediatric Chest X-ray Pneumonia/train/PNEUMONIA/'
-image_count = 777
+# This needs to be updated for each of the 4 directories the files lie in
+
+# 'test-images/Pediatric Chest X-ray Pneumonia/test/NORMAL/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/test/PNEUMONIA/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/train/PNEUMONIA/'
+directory = 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
+image_count = 1
 for file in os.listdir(directory):
     if image_count != 0:
         join = os.path.join(directory, file)

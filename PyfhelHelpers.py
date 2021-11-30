@@ -21,13 +21,22 @@ def saveEncryptedImg(cipherimg, filename):
         
     saves Encryption of image int a file
     """
-    filename = "encrypted_images/train/PNEUMONIA/" + filename
+    # This needs to be updated to correspond to the current directory
+
+    # "encrypted-images/test/NORMAL/"
+    # "encrypted-images/test/PNEUMONIA/"
+    # "encrypted-images/train/NORMAL/"
+    # "encrypted-images/train/PNEUMONIA/"
+
+    filename = "encrypted-images/train/NORMAL/" + filename
     fstream = open(filename, "wb")
+    
     #pickle.dump(cipherimg, fstream)
     #for pix in cipherimg:
     #    dump = pickle.dumps(pix)
     #    fstream.write(dump)
     #cipherimg = [pyfhel.encodeInt(pix) for pix in cipherimg]
+    
     fstream.write(cipherimg)
     fstream.close()
 
