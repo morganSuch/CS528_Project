@@ -19,20 +19,22 @@ print(HE)
 # 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
 # 'test-images/Pediatric Chest X-ray Pneumonia/train/PNEUMONIA/'
 directory = 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
-image_count = 1
+image_count = 0
 for file in os.listdir(directory):
-    if image_count != 0:
-        join = os.path.join(directory, file)
-        image = PIL.Image.open(join, mode='r', formats=None)
-        print(image_count)
-        image_count -= 1
+    join = os.path.join(directory, file)
+    image = PIL.Image.open(join, mode='r', formats=None)
+    image_count += 1
 
-        start = time.time()
-        enc_image= ImgEncrypt(HE, image)
-        saveEncryptedImg(enc_image, 'enc_'+file)
-        end = time.time()
-        print('completed encryption: ', file)
-        print(f'Elapsed time: {end - start}')
+    print(image_count)
+    
+    
+
+    start = time.time()
+    enc_image= ImgEncrypt(HE, image)
+    saveEncryptedImg(enc_image, 'enc_'+file)
+    end = time.time()
+    print('completed encryption: ', file)
+    print(f'Elapsed time: {end - start}')
 
 print('done')
 

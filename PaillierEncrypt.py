@@ -16,24 +16,17 @@ private_key = keys[1]
 # 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
 # 'test-images/Pediatric Chest X-ray Pneumonia/train/PNEUMONIA/'
 directory = 'test-images/Pediatric Chest X-ray Pneumonia/test/NORMAL/'
-image_count = 5
+image_count = 0
 for file in os.listdir(directory):
-    if image_count != 0:
-        join = os.path.join(directory, file)
-        image = PIL.Image.open(join, mode='r', formats=None)
 
-        image_count -= 1
+    join = os.path.join(directory, file)
+    image = PIL.Image.open(join, mode='r', formats=None)
 
-        enc_image= ImgEncrypt(public_key, image)
-    # print(enc_image)
+    image_count += 1
+    print(image_count)
+    enc_image= ImgEncrypt(public_key, image)
 
-        saveEncryptedImg(enc_image, file)
-        print('completed encryption: ', file)
-        b = os.path.getsize('encrypted_images/test/NORMAL/'+ file)
-        print('size: ',b)
-    # dec_image = ImgDecrypt(public_key, private_key,enc_image)
-
-    # saveDecryptedImg(dec_image, 'dec_noserialize_lungs')    # test
-
-
-#print(image_count)
+    saveEncryptedImg(enc_image, file)
+    print('completed encryption: ', file)
+    b = os.path.getsize('encrypted_images/test/NORMAL/'+ file)
+    print('size: ',b)
