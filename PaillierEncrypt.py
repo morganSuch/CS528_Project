@@ -10,6 +10,11 @@ private_key = keys[1]
 #print(private_key)
 
 
+# This needs to be updated for each of the 4 directories the files lie in
+# 'test-images/Pediatric Chest X-ray Pneumonia/test/NORMAL/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/test/PNEUMONIA/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/train/NORMAL/'
+# 'test-images/Pediatric Chest X-ray Pneumonia/train/PNEUMONIA/'
 
 directory = 'test-images/Pediatric Chest X-ray Pneumonia/test/NORMAL/'
 image_count = 5
@@ -25,8 +30,8 @@ for file in os.listdir(directory):
 
         saveEncryptedImg(enc_image, file)
         print('completed encryption: ', file)
-        b = os.path.getsize('encrypted_images/test/NORMAL/'+ file)
-        print('size: ',b)
+        #b = os.path.getsize('encrypted_images/test/NORMAL/'+ file)
+        #print('size: ',b)
     # dec_image = ImgDecrypt(public_key, private_key,enc_image)
 
     # saveDecryptedImg(dec_image, 'dec_noserialize_lungs')    # test
